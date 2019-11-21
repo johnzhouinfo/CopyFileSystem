@@ -61,22 +61,22 @@ public class CFSView extends JFrame {
 
     private void copyButtonActionPerformed(ActionEvent e) {
         if (sourceList.getSelectedIndex() == -1) {
-            MSGLabel.setText("Please select source file");
+            MsgLabel.setText("Please select source file");
             return;
         }
         sourceFile = sourceFileList.get(sourceList.getSelectedIndex());
 
         try {
             depth = Integer.parseInt(depthField.getText());
-            MSGLabel.setText("Successful copied " + cfsService.copyFile(sourceFile, targetPath, depth));
+            MsgLabel.setText("Successful copied " + cfsService.copyFile(sourceFile, targetPath, depth));
         } catch (IOException e1) {
-            MSGLabel.setText("Unable to copy file");
+            MsgLabel.setText("Unable to copy file");
             e1.printStackTrace();
         } catch (NumberFormatException e1) {
-            MSGLabel.setText("Only accept number in depth field");
+            MsgLabel.setText("Only accept number in depth field");
         }
 
-        MSGLabel.setVisible(true);
+        MsgLabel.setVisible(true);
     }
 
 
@@ -86,7 +86,7 @@ public class CFSView extends JFrame {
         contentPanel = new JPanel();
         label4 = new JLabel();
         sourcePathField = new JTextField();
-        MSGLabel = new JLabel();
+        MsgLabel = new JLabel();
         label5 = new JLabel();
         targetPathField = new JTextField();
         label3 = new JLabel();
@@ -147,10 +147,10 @@ public class CFSView extends JFrame {
                 });
                 contentPanel.add(sourcePathField, "cell 1 0");
 
-                //---- MSGLabel ----
-                MSGLabel.setText("WARING_MSG");
-                MSGLabel.setForeground(Color.red);
-                contentPanel.add(MSGLabel, "cell 9 0");
+                //---- MsgLabel ----
+                MsgLabel.setText("WARING_Msg");
+                MsgLabel.setForeground(Color.red);
+                contentPanel.add(MsgLabel, "cell 9 0");
 
                 //---- label5 ----
                 label5.setText("Target Path");
@@ -230,7 +230,7 @@ public class CFSView extends JFrame {
     private JPanel contentPanel;
     private JLabel label4;
     private JTextField sourcePathField;
-    private JLabel MSGLabel;
+    private JLabel MsgLabel;
     private JLabel label5;
     private JTextField targetPathField;
     private JLabel label3;
