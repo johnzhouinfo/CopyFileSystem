@@ -23,6 +23,12 @@ public class CFSServiceImpl implements CFSService {
     }
 
     @Override
+    public List<File> getFolderNumber(File target, int depth) {
+
+        return null;
+    }
+
+    @Override
     public int copyFile(File sourceFile, File target, int depth) throws IOException {
         targetPath = new ArrayList<>();
         search(target, 0, depth);
@@ -38,6 +44,7 @@ public class CFSServiceImpl implements CFSService {
 
 
     private void search(File path, int count, int depth) {
+        System.out.println("count " + count);
         if (count == depth) {
             targetPath.add(path);
             return;

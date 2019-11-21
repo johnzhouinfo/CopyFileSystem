@@ -27,7 +27,7 @@ new FormModel {
 						"value": "cell 1 0"
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
-						name: "MsgLabel"
+						name: "MSGLabel"
 						"text": "WARING_MSG"
 						"foreground": sfield java.awt.Color red
 					}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {

@@ -18,6 +18,15 @@ public interface CFSService {
     List<File> getFolderInfo(File target) throws IOException;
 
     /**
+     * Get total number of folders in the specific depth
+     *
+     * @param target
+     * @param depth
+     * @return
+     */
+    List<File> getFolderNumber(File target, int depth);
+
+    /**
      * Copy the sourceFile in to the target path with specific depth of the folder
      *
      * @param sourceFile
