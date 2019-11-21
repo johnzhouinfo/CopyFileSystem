@@ -1,8 +1,7 @@
 package info.johnzhou.CFS;
 
-import info.johnzhou.DO.FolderDO;
-
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -16,7 +15,7 @@ public interface CFSService {
      *
      * @return
      */
-    List<FolderDO> getFolderInfo(File target);
+    List<File> getFolderInfo(File target) throws IOException;
 
     /**
      * Get total number of folders in the specific depth
@@ -25,7 +24,7 @@ public interface CFSService {
      * @param depth
      * @return
      */
-    int getFolderNumber(File target, int depth);
+    List<File> getFolderNumber(File target, int depth);
 
     /**
      * Copy the sourceFile in to the target path with specific depth of the folder
@@ -35,5 +34,5 @@ public interface CFSService {
      * @param depth
      * @return
      */
-    int copyFile(File sourceFile, File target, int depth);
+    int copyFile(File sourceFile, File target, int depth) throws IOException;
 }
